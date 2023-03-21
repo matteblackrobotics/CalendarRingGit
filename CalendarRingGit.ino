@@ -9,15 +9,14 @@
 void setup() 
 {
   Serial.begin(9600); 
-  pinMode(stripPowerPin, OUTPUT); 
-  stripPowerOff();
-  stripPowerOn();
-  Strip1.begin();
- 
+  
+  setupDotStar();
+  // Serial.println("setupDotStar: Complete");
+
 
   for(int i=0; i<dotStarCount; i++)
   {
-    Strip1.setPixelColor(i, 20, 50, 200);
+    Strip1.setPixelColor(i, 0, 50, 200);
   }
   Strip1.setBrightness(12);
   Strip1.setPixelColor(0, 0, 0, 100);

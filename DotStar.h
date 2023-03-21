@@ -46,14 +46,15 @@ void setupDotStar()
  pinMode(stripPowerPin, OUTPUT); 
  stripPowerOff();
  stripPowerOn();
- Strip1.begin(); delay(1000);
+ Strip1.begin();
  // Strip1.clear();
- // ledOff();
+ ledOff();
  // Strip1.setBrightness(10); //adjust brightness here
  Strip1.setPixelColor(0, 100, 0,0); 
  Strip1.show();
- // ledOff();
- printString("setupDotStar: compelete"); printLn();
+ ledOff(); delay(200);
+ // Serial.println("setupDotStar: Complete");
+ // printString("setupDotStar: compelete"); printLn();
 }
 
 #endif
