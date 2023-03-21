@@ -57,6 +57,16 @@ void setFinalLED()
 }
 
 
+// -------------------- setFill ------------------- //
+void setFill(int startLED, int endLED, int r, int g, int b)
+{
+  for(int i = startLED; i < endLED; i++)
+  {
+    Strip1.setPixelColor(i, r, g, b);
+  }
+}
+
+
 // -------------------- setupDotStar ------------------- //
 void setupDotStar()
 { 

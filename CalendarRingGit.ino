@@ -12,14 +12,7 @@ void setup()
   setupSerial();
   setupDotStar();
 
-
-  for(int i=0; i<dotStarCount; i++)
-  {
-    Strip1.setPixelColor(i, 0, 50, 200);
-  }
-  Strip1.setBrightness(12);
-  // Strip1.setPixelColor(0, 100, 0, 100);
-  // Strip1.setPixelColor(5, 0, 100, 0);
+  setFill(0, dotStarCount, 0, 20, 100);
   setDay(dotStarCount, 100, 100, 0);
   setDay(1, 0, 100, 0);
   setDay(5, 100, 100, 100);
