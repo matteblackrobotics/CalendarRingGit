@@ -7,9 +7,12 @@
 #define dotStarDataPin 4
 #define dotStarClockPin 5
 
+// MOSFET
 const int stripPowerPin = 2;
 
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
+
+
 // -------------------- stripPowerOn ------------------- //
 void stripPowerOn()
 {
@@ -76,9 +79,16 @@ void setupDotStar()
  Strip1.setPixelColor(0, 100, 0,0); 
  Strip1.show();
  Strip1.clear();
- // delay(1000);
  Serial.println("setupDotStar: Complete");
- // printString("setupDotStar: compelete"); printLn();
 }
 
+
+void stripTest()
+{
+  setFill(0, dotStarCount, 0, 100, 100);
+  setDay(dotStarCount, 100, 100, 0);
+  setDay(1, 0, 100, 0);
+  setDay(5, 100, 100, 100);
+  Strip1.show(); 
+}
 #endif

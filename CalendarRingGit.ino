@@ -5,7 +5,6 @@
 #include "xPrint.h"
 #include "DotStar.h"
  
- 
 
 // ---------------------- setup -------------------- //
 void setup() 
@@ -13,14 +12,8 @@ void setup()
   setupSerial();
 
   setupDotStar();
-  setFill(0, dotStarCount, 0, 20, 100);
-  setDay(dotStarCount, 100, 100, 0);
-  setDay(1, 0, 100, 0);
-  setDay(5, 100, 100, 100);
-  Strip1.show();  
-  // Serial.println("setupDotStar: Complete");   //  yes     
-  // printString("setup complete"); // yes but doesn't print
-  // printLn();        
+  // stripTest();
+       
 }
 
 // ---------------------- loop -------------------- //
