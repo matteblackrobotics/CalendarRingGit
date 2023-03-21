@@ -8,10 +8,11 @@
 // ---------------------- setup -------------------- //
 void setup() 
 {
-  Serial.begin(9600); 
-  
+  Serial.begin(9600); delay(200);
+  // Serial.println("setupDotStar: Complete"); nope
+  // Serial.println("dotStarSetup: Complete"); nope
   setupDotStar();
-  // Serial.println("setupDotStar: Complete");
+  // Serial.println("setupDotStar: Complete"); nope
 
 
   for(int i=0; i<dotStarCount; i++)
@@ -22,7 +23,8 @@ void setup()
   Strip1.setPixelColor(0, 100, 0, 100);
   Strip1.setPixelColor(5, 0, 100, 0);
   setFinalLED();
-  Strip1.show();                     
+  Strip1.show();  
+  // Serial.println("setupDotStar: Complete");     nope              
 }
 
 
@@ -38,6 +40,7 @@ void loop()
   }
   Serial.print("millis(): ");
   Serial.println(millis());
+  delay(1000);
 }
 
 // -------------------- setFinalLED ------------------- //
