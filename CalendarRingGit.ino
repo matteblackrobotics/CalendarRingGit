@@ -24,7 +24,7 @@ void setup()
     strip1.setPixelColor(i, 20, 200, 20);
   }
   strip1.setBrightness(12);
-  strip1.setPixelColor(0, 0, 100, 100);
+  strip1.setPixelColor(0, 100, 100, 100);
   strip1.setPixelColor(5, 0, 100, 100);
   setFinalLED();
   strip1.show();                     
