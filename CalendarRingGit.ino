@@ -4,6 +4,7 @@
 
 #include "xPrint.h"
 #include "DotStar.h"
+#include "FirstDays.h" 
  
 
 // ---------------------- setup -------------------- //
@@ -17,8 +18,16 @@ void setup()
   setFinalDay();
   setFinalLED();
   // stripTest();
+  
+  // ---------- firstDays -------- //
+  // calculateFirstDays();
+  // printFirstDays();
+  // printFirstDayColors();
+  // setFirstDays();
+  // Serial.println();
+
+
   showStrip1();
-       
 }
 
 // ---------------------- loop -------------------- //

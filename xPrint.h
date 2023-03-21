@@ -8,7 +8,7 @@
 const int baud1 = 9600;
 const int baud2 = 19200;
 const int baud3 = 115200;
-int baudRate = baud3;
+int baudRate = baud1;
 
 String fileName = "------------------ CalendarRingGit ------------------";
 String author = "Matt Pfeiffer March, 2023 ";

@@ -36,8 +36,7 @@ void printFirstDayColors()
     Serial.print(" ");
     delay(10);
   }
-  Serial.print(" - Light Blue");
-  Serial.println();
+  Serial.println(" - Light Blue");
 }
 
 
@@ -60,11 +59,9 @@ void setFirstDays()
   {
     // from the first days array 1 to 12, set RGB
     // minus 1 for indexing
-    
     Strip1.setPixelColor(firstDays[Month]-1, firstDayColors[0], firstDayColors[1], firstDayColors[2]);
   }  
-  printString("firstDays: set");
-  printLn();
+  Serial.println("firstDays: set");
 }
 
 // final assembly function used in main loop
@@ -75,7 +72,7 @@ void processFirstDays()
   printFirstDays();
   printFirstDayColors();
   setFirstDays();
-  printLn();
+  Serial.println();
 }
 
 #endif
