@@ -72,6 +72,7 @@ void printLn()
 void setupSerial()
 {
   Serial.begin(9600); delay(200);
+  Serial.println("setupSerial");
   // printLn();
   // printString(fileName); 
   // printLn();

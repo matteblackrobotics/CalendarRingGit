@@ -18,7 +18,7 @@ void stripPowerOn()
 {
   digitalWrite(stripPowerPin, HIGH);
   // printString("stripPowerState: On");  printLn();
-  Serial.println("stripPoweOn");
+  Serial.println("stripPowerOn");
   delay(10);
 }
 
@@ -27,7 +27,7 @@ void stripPowerOff()
 {
   digitalWrite(stripPowerPin, LOW);
   // printString("stripPowerOff"); printLn();
-  Serial.println("stripPoweOn");
+  Serial.println("stripPowerOn");
   delay(10);
 }
 
@@ -72,7 +72,7 @@ void setupDotStar()
  Strip1.show();
  Strip1.clear();
  // delay(1000);
- // Serial.println("setupDotStar: Complete");
+ Serial.println("setupDotStar: Complete");
  // printString("setupDotStar: compelete"); printLn();
 }
 

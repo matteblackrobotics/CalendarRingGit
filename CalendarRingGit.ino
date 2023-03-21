@@ -10,11 +10,7 @@
 void setup() 
 {
   setupSerial();
-  // Serial.begin(9600); delay(200);
-  // Serial.println("setupDotStar: Complete"); // nope
-  Serial.println("dotStarSetup: Complete");
   setupDotStar();
-  // Serial.println("setupDotStar: Complete");
 
 
   for(int i=0; i<dotStarCount; i++)
