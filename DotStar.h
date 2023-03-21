@@ -32,6 +32,32 @@ void stripPowerOff()
 }
 
 
+// -------------------- setDay ------------------- //
+void setDay(int Day, int R, int G, int B)
+{
+  // index shift from day 1 to index 0
+  Strip1.setPixelColor(Day-1, R,G,B);
+}
+
+
+// -------------------- setFirstLED ------------------- //
+void setFirstLED()
+{
+  setDay(1, 0, 100, 0);
+  // printString("firstLED set Green");
+  // printLn();
+}
+
+
+// -------------------- setFinalLED ------------------- //
+void setFinalLED()
+{
+  setDay(dotStarCount, 100, 0, 0);
+  // printInt("finalLED set Green", dotStarCount);
+  // printLn();
+}
+
+
 // -------------------- setupDotStar ------------------- //
 void setupDotStar()
 { 
