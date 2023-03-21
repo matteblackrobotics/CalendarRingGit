@@ -13,7 +13,7 @@ const int stripPowerPin = 2;
 
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
 
-// -------------------- stripOn Off ------------------- //
+// -------------------- stripPowerOn ------------------- //
 void stripPowerOn()
 {
   digitalWrite(stripPowerPin, HIGH);
@@ -22,7 +22,7 @@ void stripPowerOn()
   delay(10);
 }
 
-
+// -------------------- stripPowerOff ------------------- //
 void stripPowerOff()
 {
   digitalWrite(stripPowerPin, LOW);
@@ -30,7 +30,6 @@ void stripPowerOff()
   printLn();
   delay(10);
 }
-
 
 // -------------------- setDay ------------------- //
 void setDay(int Day, int R, int G, int B)

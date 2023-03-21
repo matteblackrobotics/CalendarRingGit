@@ -25,8 +25,9 @@ void setup()
   // Strip1.setPixelColor(5, 0, 100, 0);
   setFirstLED();
   setFinalLED();
+  setDay(5, 100, 100, 100);
   Strip1.show();  
-  // Serial.println("setupDotStar: Complete");     nope              
+  Serial.println("setupDotStar: Complete");   //  yes             
 }
 
 
