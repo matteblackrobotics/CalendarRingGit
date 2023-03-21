@@ -1,6 +1,8 @@
 #ifndef DOTSTAR_h
 #define DOTSTAR_h
 
+#include "xPrint.h"
+
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
 #define dotStarCount 432
@@ -30,16 +32,6 @@ void stripPowerOff()
 }
 
 
-void ledOff()
-{
-  for(int dotStar = 0; dotStar < dotStarCount; dotStar++) 
-  {
-    Strip1.setPixelColor(dotStar, 0, 0, 0);
-  }
-  Strip1.show();
-}
-
-
 // -------------------- setupDotStar ------------------- //
 void setupDotStar()
 { 
@@ -47,12 +39,12 @@ void setupDotStar()
  stripPowerOff();
  stripPowerOn();
  Strip1.begin();
- // Strip1.clear();
- ledOff();
+ Strip1.clear();
  // Strip1.setBrightness(10); //adjust brightness here
  Strip1.setPixelColor(0, 100, 0,0); 
  Strip1.show();
- ledOff(); delay(200);
+ Strip1.clear();
+ // delay(1000);
  // Serial.println("setupDotStar: Complete");
  // printString("setupDotStar: compelete"); printLn();
 }

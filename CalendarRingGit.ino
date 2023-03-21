@@ -19,7 +19,7 @@ void setup()
     Strip1.setPixelColor(i, 0, 50, 200);
   }
   Strip1.setBrightness(12);
-  Strip1.setPixelColor(0, 0, 0, 100);
+  Strip1.setPixelColor(0, 100, 0, 100);
   Strip1.setPixelColor(5, 0, 100, 0);
   setFinalLED();
   Strip1.show();                     
