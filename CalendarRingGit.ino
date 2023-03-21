@@ -1,8 +1,9 @@
-// Test dot star with power pin
+// Notes:
+// Serial printing failes dotStar
+// try faster serial?
 
 #include "xPrint.h"
 #include "DotStar.h"
-  
 
 
 // ---------------------- setup -------------------- //
@@ -10,10 +11,10 @@ void setup()
 {
   setupSerial();
   // Serial.begin(9600); delay(200);
-  // Serial.println("setupDotStar: Complete"); nope
-  // Serial.println("dotStarSetup: Complete"); nope
+  Serial.println("setupDotStar: Complete"); // nope
+  // Serial.println("dotStarSetup: Complete");
   setupDotStar();
-  // Serial.println("setupDotStar: Complete"); nope
+  // Serial.println("setupDotStar: Complete");
 
 
   for(int i=0; i<dotStarCount; i++)
@@ -23,9 +24,9 @@ void setup()
   Strip1.setBrightness(12);
   // Strip1.setPixelColor(0, 100, 0, 100);
   // Strip1.setPixelColor(5, 0, 100, 0);
-  setFirstLED();
-  setFinalLED();
-  setDay(5, 100, 100, 100);
+  setDay(dotStarCount, 100, 100, 0);
+  setDay(1, 0, 100, 0);
+  setDay(5, 100, 0, 100);
   Strip1.show();  
   // Serial.println("setupDotStar: Complete");   //  yes     
   // printString("setup complete"); // yes something weird with serial
@@ -47,4 +48,3 @@ void loop()
   Serial.println(millis());
   delay(1000);
 }
-

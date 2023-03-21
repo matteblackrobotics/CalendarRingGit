@@ -9,11 +9,10 @@
 const int baud1 = 9600;
 const int baud2 = 19200;
 const long baud3 = 115200;
-long baudRate = baud1;
+long baudRate = baud3;
 
 String fileName = "------------------ CalendarRing.5 ------------------";
 String author = "Matt Pfeiffer Feb, 2023 ";
-
 
 
 void printInt(String a, int b)

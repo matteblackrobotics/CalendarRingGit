@@ -65,6 +65,8 @@ void setupDotStar()
  stripPowerOn();
  Strip1.begin();
  Strip1.clear();
+ Strip1.show();
+ delay(100);
  // Strip1.setBrightness(10); //adjust brightness here
  Strip1.setPixelColor(0, 100, 0,0); 
  Strip1.show();
