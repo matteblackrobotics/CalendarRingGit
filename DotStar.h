@@ -9,13 +9,11 @@
 
 const int stripPowerPin = 2;
 
-Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
-
+Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
 // -------------------- stripPowerOn ------------------- //
 void stripPowerOn()
 {
   digitalWrite(stripPowerPin, HIGH);
-  // printString("stripPowerState: On");  printLn();
   Serial.println("stripPowerOn");
   delay(10);
 }
@@ -24,7 +22,6 @@ void stripPowerOn()
 void stripPowerOff()
 {
   digitalWrite(stripPowerPin, LOW);
-  // printString("stripPowerOff"); printLn();
   Serial.println("stripPowerOn");
   delay(10);
 }

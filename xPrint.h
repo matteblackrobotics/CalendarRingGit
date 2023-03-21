@@ -73,15 +73,10 @@ void printLn()
 void setupSerial()
 {
   Serial.begin(9600); delay(200);
+  Serial.println();
   Serial.println(fileName);
   Serial.println(author);
   Serial.println();
-  // printLn();
-  // printString(fileName); 
-  // printLn();
-  // printString(author); 
-  // printLn();
-  // printLn();
 }
 
 #endif

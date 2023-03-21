@@ -4,14 +4,15 @@
 
 #include "xPrint.h"
 #include "DotStar.h"
+ 
+ 
 
 // ---------------------- setup -------------------- //
 void setup() 
 {
   setupSerial();
-  setupDotStar();
- 
 
+  setupDotStar();
   setFill(0, dotStarCount, 0, 20, 100);
   setDay(dotStarCount, 100, 100, 0);
   setDay(1, 0, 100, 0);
@@ -22,20 +23,10 @@ void setup()
   // printLn();        
 }
 
-
 // ---------------------- loop -------------------- //
 void loop() 
 {
-  while(false)
-  {
-    stripPowerOn();
-    delay(1000);
-    stripPowerOff();
-    delay(1000);
-  }
-  // Serial.print("millis(): ");
-  // Serial.println(millis());
-  printLong("millis()", millis());
-  Serial.println();
+  Serial.print("millis(): ");
+  Serial.println(millis());
   delay(1000);
 }
