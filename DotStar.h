@@ -1,8 +1,6 @@
 #ifndef DOTSTAR_h
 #define DOTSTAR_h
 
-#include "xPrint.h"
-
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
 #define dotStarCount 432

@@ -4,15 +4,14 @@
 #define xPrint_h
 #include <Arduino.h>
 
-
 // buad rates
 const int baud1 = 9600;
 const int baud2 = 19200;
 const int baud3 = 115200;
 int baudRate = baud3;
 
-String fileName = "------------------ CalendarRing.5 ------------------";
-String author = "Matt Pfeiffer Feb, 2023 ";
+String fileName = "------------------ CalendarRingGit ------------------";
+String author = "Matt Pfeiffer March, 2023 ";
 
 
 void printInt(String a, int b)
@@ -23,6 +22,7 @@ void printInt(String a, int b)
   Serial.print("  ");
 }
 
+
 void printLong(String a, long b)
 {
   Serial.print(" ");
@@ -31,6 +31,7 @@ void printLong(String a, long b)
   Serial.print(b);
   Serial.print("  ");
 }
+
 
 void printFloat(String a, float b)
 {
@@ -72,7 +73,9 @@ void printLn()
 void setupSerial()
 {
   Serial.begin(9600); delay(200);
-  Serial.println("setupSerial");
+  Serial.println(fileName);
+  Serial.println(author);
+  Serial.println();
   // printLn();
   // printString(fileName); 
   // printLn();
