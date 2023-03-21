@@ -3,14 +3,21 @@
 
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
-#define dotStarCount 432
+const int dotStarCount = 432;
 #define dotStarDataPin 4
 #define dotStarClockPin 5
+
+const int totalDays = 365;
 
 // MOSFET
 const int stripPowerPin = 2;
 
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
+
+void showStrip1()
+{
+  Strip1.show();
+}
 
 
 // -------------------- stripPowerOn ------------------- //
@@ -38,11 +45,18 @@ void setDay(int Day, int R, int G, int B)
 
 
 // -------------------- setFirstLED ------------------- //
-void setFirstLED()
+void setFirstDay()
 {
-  setDay(1, 0, 100, 0);
-  // printString("firstLED set Green");
-  // printLn();
+  setDay(1, 100, 100, 0);
+  Serial.println("firstDay set");
+}
+
+
+// -------------------- setFinalDay ------------------- //
+void setFinalDay()
+{
+  setDay(totalDays, 100, 0, 0);
+  Serial.println("finalDay set");
 }
 
 
@@ -50,8 +64,7 @@ void setFirstLED()
 void setFinalLED()
 {
   setDay(dotStarCount, 100, 0, 0);
-  // printInt("finalLED set Green", dotStarCount);
-  // printLn();
+  // Serial.println("finalLED set");
 }
 
 
@@ -71,13 +84,12 @@ void setupDotStar()
  pinMode(stripPowerPin, OUTPUT); 
  stripPowerOff();
  stripPowerOn();
- Strip1.begin();
+ Strip1.begin(); 
  Strip1.clear();
  Strip1.show();
- delay(100);
- // Strip1.setBrightness(10); //adjust brightness here
- Strip1.setPixelColor(0, 100, 0,0); 
+ setFill(0, dotStarCount-1, 0, 30, 30); 
  Strip1.show();
+ delay(100);
  Strip1.clear();
  Serial.println("setupDotStar: Complete");
 }

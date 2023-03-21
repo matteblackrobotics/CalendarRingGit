@@ -11,8 +11,13 @@ void setup()
 {
   setupSerial();
 
+  // --------- dotStar -------- //
   setupDotStar();
+  setFirstDay();
+  setFinalDay();
+  setFinalLED();
   // stripTest();
+  showStrip1();
        
 }
 
