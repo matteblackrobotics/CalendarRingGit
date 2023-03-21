@@ -2,6 +2,6 @@
     "configuration": "cpu=atmega328",
     "board": "arduino:avr:nano",
     "programmer": "avrisp",
-    "port": "/dev/tty.usbserial-14430",
+    "port": "/dev/tty.usbserial-14130",
     "sketch": "CalendarRingGit.ino"
 }

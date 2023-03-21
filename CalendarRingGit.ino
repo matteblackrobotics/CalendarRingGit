@@ -1,33 +1,29 @@
 // Test dot star with power pin
 
-#include <Adafruit_DotStar.h>
-#include <SPI.h>         
-#define dotStarCount 432
-#define dotStarDataPin 4
-#define dotStarClockPin 5
-
-const int stripPowerPin = 2;
-
-Adafruit_DotStar strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
+#include "xPrint.h"
+#include "DotStar.h"
+  
 
 
 // ---------------------- setup -------------------- //
 void setup() 
 {
-  Serial.begin(9600);
-  strip1.begin();   
-  pinMode(stripPowerPin, OUTPUT);   
+  Serial.begin(9600); 
+  pinMode(stripPowerPin, OUTPUT); 
   stripPowerOff();
   stripPowerOn();
+  Strip1.begin();
+ 
+
   for(int i=0; i<dotStarCount; i++)
   {
-    strip1.setPixelColor(i, 20, 200, 20);
+    Strip1.setPixelColor(i, 20, 50, 200);
   }
-  strip1.setBrightness(12);
-  strip1.setPixelColor(0, 100, 100, 100);
-  strip1.setPixelColor(5, 0, 100, 100);
+  Strip1.setBrightness(12);
+  Strip1.setPixelColor(0, 0, 0, 100);
+  Strip1.setPixelColor(5, 0, 100, 0);
   setFinalLED();
-  strip1.show();                     
+  Strip1.show();                     
 }
 
 
@@ -48,26 +44,8 @@ void loop()
 // -------------------- setFinalLED ------------------- //
 void setFinalLED()
 {
-  strip1.setPixelColor(dotStarCount-1, 200, 0, 0);
+  Strip1.setPixelColor(dotStarCount-1, 200, 2000, 0);
   Serial.print("finalLED: set Blue");
   Serial.println();
 }
 
-
-// ---------------------- stripPowerOn -------------------- //
-void stripPowerOn()
-{
-  digitalWrite(stripPowerPin, HIGH);
-  Serial.print("stripPowerState: On");
-  Serial.println();
-  delay(10);
-}
-
-// ---------------------- stripPowerOff -------------------- //
-void stripPowerOff()
-{
-  digitalWrite(stripPowerPin, LOW);
-  Serial.print("stripPowerState: Off");
-  Serial.println();
-  delay(10);
-}
