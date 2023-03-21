@@ -2,10 +2,10 @@
 // Serial printing failes dotStar
 // try faster serial?
 
+
 #include "xPrint.h"
-#include "DotStar.h"
 #include "FirstDays.h" 
- 
+#include "DotStar.h"
 
 // ---------------------- setup -------------------- //
 void setup() 
