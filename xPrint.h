@@ -8,8 +8,8 @@
 // buad rates
 const int baud1 = 9600;
 const int baud2 = 19200;
-const long baud3 = 115200;
-long baudRate = baud3;
+const int baud3 = 115200;
+int baudRate = baud3;
 
 String fileName = "------------------ CalendarRing.5 ------------------";
 String author = "Matt Pfeiffer Feb, 2023 ";
@@ -71,7 +71,7 @@ void printLn()
 // --------------- setupSerial --------------- //
 void setupSerial()
 {
-  Serial.begin(baudRate); delay(200);
+  Serial.begin(9600); delay(200);
   // printLn();
   // printString(fileName); 
   // printLn();

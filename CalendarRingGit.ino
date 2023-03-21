@@ -11,8 +11,8 @@ void setup()
 {
   setupSerial();
   // Serial.begin(9600); delay(200);
-  Serial.println("setupDotStar: Complete"); // nope
-  // Serial.println("dotStarSetup: Complete");
+  // Serial.println("setupDotStar: Complete"); // nope
+  Serial.println("dotStarSetup: Complete");
   setupDotStar();
   // Serial.println("setupDotStar: Complete");
 
@@ -26,10 +26,10 @@ void setup()
   // Strip1.setPixelColor(5, 0, 100, 0);
   setDay(dotStarCount, 100, 100, 0);
   setDay(1, 0, 100, 0);
-  setDay(5, 100, 0, 100);
+  setDay(5, 100, 100, 100);
   Strip1.show();  
   // Serial.println("setupDotStar: Complete");   //  yes     
-  // printString("setup complete"); // yes something weird with serial
+  // printString("setup complete"); // yes but doesn't print
   // printLn();        
 }
 
@@ -46,5 +46,7 @@ void loop()
   }
   Serial.print("millis(): ");
   Serial.println(millis());
+  // printLong("millis()", millis());
+  // printLn();
   delay(1000);
 }

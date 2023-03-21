@@ -17,8 +17,8 @@ Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_B
 void stripPowerOn()
 {
   digitalWrite(stripPowerPin, HIGH);
-  printString("stripPowerState: On");
-  printLn();
+  // printString("stripPowerState: On");  printLn();
+  Serial.println("stripPoweOn");
   delay(10);
 }
 
@@ -26,8 +26,8 @@ void stripPowerOn()
 void stripPowerOff()
 {
   digitalWrite(stripPowerPin, LOW);
-  printString("stripPowerState: Off");
-  printLn();
+  // printString("stripPowerOff"); printLn();
+  Serial.println("stripPoweOn");
   delay(10);
 }
 
