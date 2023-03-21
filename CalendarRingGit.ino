@@ -27,7 +27,9 @@ void setup()
   setFinalLED();
   setDay(5, 100, 100, 100);
   Strip1.show();  
-  Serial.println("setupDotStar: Complete");   //  yes             
+  Serial.println("setupDotStar: Complete");   //  yes     
+  printString("setup complete"); // yes something weird with serial
+  printLn();        
 }
 
 
