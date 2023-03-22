@@ -2,16 +2,17 @@
 #define DOTSTAR_h
 
 // Adafruit DotStar: https://learn.adafruit.com/adafruit-dotstar-leds/overview
+// SPI Communication
 // 5v to 5v power supply
 // GND to GND power supply (to MOSFET source) out drain to GND
-// Dl (data line) to D4
-// Cl (clock line) to D5
+// DI (data input green) to D11 (SPI MOSI pin ardiuno nano) D4 was connceted to what I though was SDA
+// CI (clock input yellow) to D13 (SPI SCK pin arduino nano) D5 was connected to what I thought was SCL
 
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
 const int dotStarCount = 432;
-#define dotStarDataPin 4
-#define dotStarClockPin 5
+#define dotStarDataPin 11
+#define dotStarClockPin 13
 
 const int totalDays = 365;
 

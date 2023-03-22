@@ -7,21 +7,25 @@
 
 // #include "xPrint.h"
 
-// -------------------------- dotStar --------------- //
 // Adafruit DotStar: https://learn.adafruit.com/adafruit-dotstar-leds/overview
+// SPI Communication
 // 5v to 5v power supply
 // GND to GND power supply (to MOSFET source) out drain to GND
-// Dl (data line) to D4
-// Cl (clock line) to D5
+// DI (data input green) to D11 (SPI MOSI pin ardiuno nano) D4 was connceted to what I though was SDA
+// CI (clock input yellow) to D13 (SPI SCK pin arduino nano) D5 was connected to what I thought was SCL
+
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
-const int dotStarCount = 432;
-#define dotStarDataPin 4
-#define dotStarClockPin 5
+#define dotStarCount 432
+#define dotStarDataPin 11
+#define dotStarClockPin 13
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
 
 const int totalDays = 365;
-const int stripPowerPin = 2; // MOSFET gate
+
+// MOSFET
+const int stripPowerPin = 2; // gate
+
 
 
 // -------------------------- serial ------------------- //
@@ -35,9 +39,17 @@ void setup()
 {
   setupSerial();
 
+  Strip1.begin(); 
+ Strip1.clear();
+ Strip1.show();
+ setFill(0, dotStarCount-1, 0, 30, 30); 
+ Strip1.show();
+ delay(100);
+ Strip1.clear();
+
   // --------- dotStar -------- //
-  setupDotStar();
-  //setFirstDay();
+  //setupDotStar();
+  // setFirstDay();
   //setFinalDay();
   //setFinalLED();
   // stripTest();
@@ -142,9 +154,9 @@ void setFill(int startLED, int endLED, int r, int g, int b)
 // -------------------- setupDotStar ------------------- //
 void setupDotStar()
 { 
- pinMode(stripPowerPin, OUTPUT); 
- stripPowerOff();
- stripPowerOn();
+ //pinMode(stripPowerPin, OUTPUT); 
+ //stripPowerOff();
+ //stripPowerOn();
  Strip1.begin(); 
  Strip1.clear();
  Strip1.show();
@@ -152,11 +164,11 @@ void setupDotStar()
  Strip1.show();
  delay(100);
  Strip1.clear();
- Serial.println("setupDotStar: complete");
+ //Serial.println("setupDotStar: complete");
 
  // ISSUE 1
- Serial.println("small works");
- Serial.println("Large works lllaslkasdjfkjahsdfkjna;efkn;wkmnf;lkmsfd;lkasmdflsadmf;lsdkf");
+ //Serial.println("small works");
+ //Serial.println("Large works lllaslkasdjfkjahsdfkjna;efkn;wkmnf;lkmsfd;lkasmdflsadmf;lsdkf");
 }
 
 
