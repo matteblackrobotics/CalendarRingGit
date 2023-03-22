@@ -1,6 +1,9 @@
 // Notes:
 // Serial printing failes dotStar
-// try faster serial?
+// inclduing new files fails..?
+
+// ISSSUE 1:
+// printing too many bits to serial fails the dotstar upload
 
 
 #include "xPrint.h"

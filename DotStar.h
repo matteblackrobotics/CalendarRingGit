@@ -32,7 +32,7 @@ void stripPowerOn()
 void stripPowerOff()
 {
   digitalWrite(stripPowerPin, LOW);
-  Serial.println("stripPowerOn");
+  Serial.println("stripPowerOff");
   delay(10);
 }
 
@@ -91,7 +91,11 @@ void setupDotStar()
  Strip1.show();
  delay(100);
  Strip1.clear();
- Serial.println("setupDotStar: Complete");
+ // Serial.println("setupDotStar: complete");
+
+ // ISSUE 1
+ Serial.println("small works");
+ // Serial.println("Large fails lllaslkasdjfkjahsdfkjna;efkn;wkmnf;lkmsfd;lkasmdflsadmf;lsdkf");
 }
 
 
