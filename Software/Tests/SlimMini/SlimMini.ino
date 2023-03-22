@@ -11,7 +11,6 @@
 
 void setup() 
 {
-
   setupSerial();
   setupDotStar();
   processFirstDays();
