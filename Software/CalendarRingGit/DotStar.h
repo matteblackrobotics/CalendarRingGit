@@ -1,6 +1,12 @@
 #ifndef DOTSTAR_h
 #define DOTSTAR_h
 
+// Adafruit DotStar: https://learn.adafruit.com/adafruit-dotstar-leds/overview
+// 5v to 5v power supply
+// GND to GND power supply (to MOSFET source) out drain to GND
+// Dl (data line) to D4
+// Cl (clock line) to D5
+
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
 const int dotStarCount = 432;
@@ -10,7 +16,7 @@ const int dotStarCount = 432;
 const int totalDays = 365;
 
 // MOSFET
-const int stripPowerPin = 2;
+const int stripPowerPin = 2; // gate
 
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
 
