@@ -1,22 +1,18 @@
 #include "FirstDays.h"
-#include "Solinox.h"
 #include "DotStar.h"
+#include "Solinox.h"
 #include "xPrint.h" 
 
 
 void setup() 
 {
   setupSerial();
-  
   setupDotStar();
-  // setSolinoxs1();
   processFirstDays();
-  
-  
   setFinalDay();
   setFinalLED();
 
-  
+  // setSolinoxs1();
   Strip1.show();
 }
 

@@ -1,6 +1,8 @@
 #ifndef Solinox_h
 #define Solinox_h
 
+// #include "DotStar.h"
+
 // Layer 2
 const int solinoxMax = 4;
 const int solinoxs[solinoxMax] = {79, 172, 266, 355};  // March 20, June 21st, Sept 23, Dec 21 
