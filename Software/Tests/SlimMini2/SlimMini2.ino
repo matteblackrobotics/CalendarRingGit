@@ -21,7 +21,7 @@ void setup()
 void loop() 
 {
   Serial.println(millis());
-  Strip1.setPixelColor(1,100,0,100);
+  Strip1.setPixelColor(1,100,100,100);
   Strip1.show();
   delay(100);
   Strip1.setPixelColor(1,0,0,0);

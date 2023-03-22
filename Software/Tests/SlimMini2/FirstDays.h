@@ -1,7 +1,7 @@
 #ifndef FirstDays_h
 #define FirstDays_h
 
-// #include "DotStar.h"
+#include "DotStar.h"
 
 // Layer 1
 
@@ -49,9 +49,6 @@ void printFirstDayColors()
   }
   Serial.println(" - Light Blue");
 }
-
-
-
 
 
 // ------------------ setFirstDays() --------------- //
