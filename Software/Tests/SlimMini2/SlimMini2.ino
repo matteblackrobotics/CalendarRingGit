@@ -1,6 +1,7 @@
+#include "FirstDays.h"
 #include "DotStar.h"
 #include "xPrint.h" 
-#include "FirstDays.h"
+
 
 void setup() 
 {
@@ -10,7 +11,7 @@ void setup()
   calculateFirstDays();
   printFirstDays();
   printFirstDayColors();
-  // setFirstDays();
+  setFirstDays();
   
   setFinalDay();
   setFinalLED();

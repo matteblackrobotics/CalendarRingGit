@@ -24,7 +24,7 @@ void setDay(int Day, int R, int G, int B)
 void setFinalDay()
 {
   setDay(totalDays, 50, 0, 0);
-  Serial.print("finalDay set Green:");  
+  Serial.print("finalDay set Red:");  
   Serial.print(totalDays);
   Serial.println();
 }
@@ -34,7 +34,7 @@ void setFinalDay()
 void setFinalLED()
 {
   setDay(dotStarCount, 50, 0, 0);
-  Serial.print("finalLED set Green:");
+  Serial.print("finalLED set Red:");
   Serial.print(dotStarCount);
   Serial.println();
 }
