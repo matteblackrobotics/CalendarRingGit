@@ -1,8 +1,11 @@
+// Notes
+// author and filename serial out fails
+
+
 #include "FirstDays.h"
 #include "DotStar.h"
 #include "Solinox.h"
 #include "xPrint.h" 
-
 
 void setup() 
 {
@@ -11,8 +14,13 @@ void setup()
   processFirstDays();
   setFinalDay();
   setFinalLED();
-
+  
   // setSolinoxs1();
+  setDay(solinoxs[0], springColors[0], springColors[1], springColors[2]);
+  setDay(solinoxs[1], summerColors[0], summerColors[1], summerColors[2]);
+  setDay(solinoxs[2], fallColors[0], fallColors[1], fallColors[2]);
+  setDay(solinoxs[3], winterColors[0], winterColors[1], winterColors[2]);
+
   Strip1.show();
 }
 

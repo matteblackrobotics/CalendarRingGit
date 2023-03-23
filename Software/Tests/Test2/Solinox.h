@@ -1,7 +1,7 @@
 #ifndef Solinox_h
 #define Solinox_h
 
-// #include "DotStar.h"
+#include "DotStar.h"
 
 // Layer 2
 const int solinoxMax = 4;
@@ -11,7 +11,7 @@ int solinoxColors[] = {80, 10, 50};
 int springColors[] = {0, 50, 0};  // green
 int summerColors[] = {50, 10, 0}; // red
 int fallColors[] = {50, 25, 0};   // orange brown
-int winterColors[] = {0, 50, 50}; // light blue
+int winterColors[] = {50, 50, 50}; // light blue
 
 // ------------------ setSolionxs() --------------- //
 // all same colors
@@ -28,6 +28,7 @@ void setSolinoxs1()
 // individual colors
 void setSolinoxs2()
 {
+  
   setDay(solinoxs[0], springColors[0], springColors[1], springColors[2]);
   setDay(solinoxs[1], summerColors[0], summerColors[1], summerColors[2]);
   setDay(solinoxs[2], fallColors[0], fallColors[1], fallColors[2]);
