@@ -1,6 +1,7 @@
 #ifndef FirstDays_h
 #define FirstDays_h
 
+#include <Arduino.h>
 #include "DotStar.h"
 
 // Layer 1

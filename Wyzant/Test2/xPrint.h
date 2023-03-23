@@ -1,6 +1,7 @@
 #ifndef xPrint_h
 #define xPrint_h
 
+#include <Arduino.h>
 String fileName = "------------------ SlimMini ------------------";
 String author = "Matt Pfeiffer Feb, 2023 ";
 

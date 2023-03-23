@@ -1,6 +1,7 @@
 #ifndef Solinox_h
 #define Solinox_h
 
+#include <Arduino.h>
 #include "DotStar.h"
 
 // Layer 2

@@ -7,7 +7,7 @@
 // GND to GND power supply (to MOSFET source) out drain to GND
 // DI (data input green) to D11 (SPI MOSI pin ardiuno nano)
 // CI (clock input yellow) to D13 (SPI SCK pin arduino nano)
-
+#include <Arduino.h>
 #include <Adafruit_DotStar.h>
 #include <SPI.h>       
 const int dotStarCount = 432;
