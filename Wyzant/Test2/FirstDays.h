@@ -13,6 +13,7 @@ const int monthLengths[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 int firstDays[12];  // dayOfYear for first day of every month
 int firstDayColors[3] = {0, 40, 40}; // RGB
 
+
 // ---------------------- calculateFirstDays() ---------------------- //
 void calculateFirstDays()
 {
@@ -23,6 +24,7 @@ void calculateFirstDays()
     firstDays[i] = firstDays[i-1] + monthLengths[i-1];
   }
 }
+
 
 // ---------------------- printFirstDays() ---------------------- //
 void printFirstDays()

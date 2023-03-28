@@ -22,7 +22,7 @@ void setSolinoxs1()
   {
     Strip1.setPixelColor(solinoxs[solinox]-1, solinoxColors[0], solinoxColors[1], solinoxColors[2]);
   }
-  Serial.println("solinoxs1: set");
+  Serial.println("solinoxs1: all same colors");
   Serial.println();
 }
 
@@ -34,7 +34,7 @@ void setSolinoxs2()
   setDay(solinoxs[1], summerColors[0], summerColors[1], summerColors[2]);
   setDay(solinoxs[2], fallColors[0], fallColors[1], fallColors[2]);
   setDay(solinoxs[3], winterColors[0], winterColors[1], winterColors[2]);
-  Serial.println("solionoxs2: set");
+  Serial.println("solionoxs2: green, red, brown, white");
   Serial.println();
 }
 
