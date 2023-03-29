@@ -2,7 +2,18 @@
 #define FirstDays_h
 
 #include <Arduino.h>
-#include "DotStar.h"
+
+
+
+#include <Adafruit_DotStar.h>
+#include <SPI.h>       
+const int dotStarCount = 432;
+// #define dotStarDataPin    11
+// #define dotStarClockPin   13
+#define dotStarDataPin    6
+#define dotStarClockPin   5
+
+
 
 // Layer 1
 
@@ -28,7 +39,7 @@ void calculateFirstDays()
 
 void testPrint()
 {
-  Serial.println(F("jsadfasdfasdfasdfasdfasdfsadf sd fdsa dfsa faf sdfs"));
+  Serial.println("jsadfasdfasdfasdfasdfasdfsadf sd fdsa dfsa faf sdfs");
   // removes from global variabales moves to storage space
 }
 
@@ -38,6 +49,9 @@ void printFirstDays()
   Serial.print("firstDays[]: ");
   for(int i=0; i<12; i++)
   {
+    //char buf[25];
+    //sprintf(buf, "%d", firstDays[i]);
+    //Serial.print(buf);
     Serial.print(firstDays[i]); 
     Serial.print(" ");
     delay(10);
@@ -67,9 +81,9 @@ void setFirstDays()
   {
     // from the first days array 1 to 12, set RGB
     // minus 1 for indexing
-    Strip1.setPixelColor(firstDays[Month]-1, firstDayColors[0], firstDayColors[1], firstDayColors[2]);
+    // Strip1.setPixelColor(firstDays[Month]-1, firstDayColors[0], firstDayColors[1], firstDayColors[2]);
   }  
-  Serial.println("firstDays: set");
+  // Serial.println("firstDays: set");
 }
 
 

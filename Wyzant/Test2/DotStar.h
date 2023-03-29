@@ -13,9 +13,12 @@
 const int dotStarCount = 432;
 #define dotStarDataPin    11
 #define dotStarClockPin   13
-Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
+//#define dotStarDataPin    6
+//#define dotStarClockPin   5
 
-int totalDays = 365;
+extern Adafruit_DotStar Strip1;
+
+int totalDays  = 365;
 
 // -------------------- setDay ------------------- //
 void setDay(int Day, int R, int G, int B)

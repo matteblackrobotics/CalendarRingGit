@@ -2,7 +2,6 @@
 #define Solinox_h
 
 #include <Arduino.h>
-#include "DotStar.h"
 
 // Layer 2
 const int solinoxMax = 4;
@@ -20,21 +19,10 @@ void setSolinoxs1()
 {
   for(int solinox = 0; solinox < solinoxMax; solinox++)
   {
-    Strip1.setPixelColor(solinoxs[solinox]-1, solinoxColors[0], solinoxColors[1], solinoxColors[2]);
+    // Strip1.setPixelColor(solinoxs[solinox]-1, solinoxColors[0], solinoxColors[1], solinoxColors[2]);
   }
   Serial.println("solinoxs1: all same colors");
   Serial.println();
-}
-
-// individual colors
-void setSolinoxs2()
-{
-  setDay(solinoxs[0], springColors[0], springColors[1], springColors[2]);
-  setDay(solinoxs[1], summerColors[0], summerColors[1], summerColors[2]);
-  setDay(solinoxs[2], fallColors[0], fallColors[1], fallColors[2]);
-  setDay(solinoxs[3], winterColors[0], winterColors[1], winterColors[2]);
-  // Serial.println("solionoxs2: green, red, brown, white");
-  // Serial.println();
 }
 
 

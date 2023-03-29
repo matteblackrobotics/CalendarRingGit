@@ -7,8 +7,10 @@
 
 
 #include "xPrint.h"
-#include "FirstDays.h" 
 #include "DotStar.h"
+#include "FirstDays.h" 
+
+Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
 
 // ---------------------- setup -------------------- //
 void setup() 

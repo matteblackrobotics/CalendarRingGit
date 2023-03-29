@@ -15,11 +15,12 @@ const int dotStarCount = 432;
 #define dotStarClockPin 13
 
 const int totalDays = 365;
+extern Adafruit_DotStar Strip1;
 
 // MOSFET
 const int stripPowerPin = 2; // gate
 
-Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR); 
+
 
 void showStrip1()
 {
