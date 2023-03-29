@@ -1,3 +1,6 @@
+// CalendarRing
+// Shows 1st days of every month, solstaces and equinoxs, eventually an RTC will show current day
+
 // Notes:
 // author and filename serial out fails
 
@@ -12,8 +15,6 @@ Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_B
 #include "xPrint.h" 
 #include "test.h"
 
-
-
 void setup() 
 {
   setupSerial();
@@ -24,8 +25,8 @@ void setup()
   setFinalLED();
 
   // 1. dotStar does not update, clears only when depowered, but serial does print out
-  //setSolinoxs2(); 
-  //printSolinoxs();
+  setSolinoxs2(); 
+  // printSolinoxs(); // printing solinoxs fails strip
 
   // 2. dotStar sets but printout from xPrint fails
   // setDay(solinoxs[0], springColors[0], springColors[1], springColors[2]);

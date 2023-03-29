@@ -3,6 +3,8 @@
 
 #include <Arduino.h>
 #include "DotStar.h"
+extern Adafruit_DotStar Strip1;
+
 
 // Layer 2
 const int solinoxMax = 4;

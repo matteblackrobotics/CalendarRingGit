@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "DotStar.h"
+extern Adafruit_DotStar Strip1;
 
 // Layer 1
 
@@ -80,7 +81,6 @@ void processFirstDays()
   printFirstDays();
   printFirstDayColors();
   setFirstDays();
-  Serial.println();
 }
 
 #endif
