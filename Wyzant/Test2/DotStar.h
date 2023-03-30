@@ -2,6 +2,8 @@
 #define DOTSTAR_h
 
 // Adafruit DotStar: https://learn.adafruit.com/adafruit-dotstar-leds/overview
+// Library: https://github.com/adafruit/Adafruit_DotStar
+// 
 // SPI Communication
 // 5v to 5v power supply
 // GND to GND power supply (to MOSFET source) out drain to GND
@@ -15,8 +17,7 @@ const int dotStarCount = 432;
 #define dotStarClockPin   13
 //#define dotStarDataPin    6
 //#define dotStarClockPin   5
-// extern Adafruit_DotStar Strip1;
-Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
+extern Adafruit_DotStar Strip1;
 
 int totalDays  = 365;
 

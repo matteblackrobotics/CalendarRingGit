@@ -10,7 +10,9 @@
 #include <Arduino.h>
 #include <Adafruit_DotStar.h>
 #include <SPI.h>       
-const int dotStarCount = 432;
+// const int dotStarCount = 432;
+const int dotStarCount = 400;
+
 #define dotStarDataPin    11
 #define dotStarClockPin   13
 //#define dotStarDataPin    6

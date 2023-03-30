@@ -13,19 +13,26 @@
 #include "Solinox.h"
 #include "xPrint.h" 
 #include "test.h"
-Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
+
+// #define DEBUG
 
 void setup() 
 {
   setupSerial();
-  testPrint(); // if the string is too long, it fails....
+  // testPrint(); // if the string is too long, it fails....
   setupDotStar();
   processFirstDays();
   setFinalDay();
+  setDay(dotStarCount-1, 50, 50, 0);
   setFinalLED();
+  
+  #ifdef DEBUG
+  Serial.println(" debugging ");
+  #endif
 
   // 1. dotStar does not update, clears only when depowered, but serial does print out
-  setSolinoxs2(); 
+  setSolinoxs2();
+  //setSolinoxs1(); 
   // printSolinoxs(); // printing solinoxs fails strip
 
   // 2. dotStar sets but printout from xPrint fails
@@ -41,10 +48,10 @@ void setup()
 void loop() 
 {
   Serial.println(millis());
-  Strip1.setPixelColor(1,0,0,100);
+  setDay(2,0,0,100);
   Strip1.show();
   delay(100);
-  Strip1.setPixelColor(1,0,0,0);
+  setDay(2,0,0,0);
   Strip1.show();
   delay(100);  
 }
