@@ -25,6 +25,11 @@ int totalDays  = 365;
 int ringShift = -354; // set winter solstice at top
 
 
+// ------------------- brightness ------------------- //
+const int aMin = 1;
+const int aMax = 50;
+int a;
+
 // -------------------- shiftIndex ------------------- //
 // @brief: shifts index around ring
 // @param: index: [0:indexMax], indexMax: Max size if index vector, shift: index shift
@@ -48,12 +53,20 @@ void setDay1(int Day, int R, int G, int B)
   Strip1.setPixelColor(Day-1, R,G,B);
 }
 
-
-// with ring shift
+// with ringShift
 void setDay(int Day, int R, int G, int B)
 {
   int newIndex = shiftIndex(Day-1, dotStarCount-1, ringShift);
-  Strip1.setPixelColor(newIndex, R,G,B);
+  Strip1.setPixelColor(newIndex, R, G, B);
+}
+
+// with brightness targetting
+void setDay2(int Day, int R, int G, int B)
+{
+  int newIndex = shiftIndex(Day-1, dotStarCount-1, ringShift); 
+  Strip1.setPixelColor(newIndex, R, G, B);
+  //a = linearMap(range, rangeMin, rangeMax, aMax, aMin);
+  //Strip1.setBrightness(a);
 }
 
 

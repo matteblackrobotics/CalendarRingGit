@@ -29,7 +29,7 @@ void calculateFirstDays()
 
 void testPrint()
 {
-  Serial.println(F("jsadfasdfasdfasdfasdfasdfsadf sd fdsa dfsa faf sdfs"));
+  Serial.println(F("---------- test print overload check --------"));
   // removes from global variabales moves to storage space
 }
 
