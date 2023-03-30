@@ -16,17 +16,19 @@ const int dotStarCount = 432;
 //#define dotStarDataPin    6
 //#define dotStarClockPin   5
 // extern Adafruit_DotStar Strip1;
-Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
+// Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
+
+// FastLED requires and long array, not good for low memory
+#include <FastLED.h>
+CRGB leds[dotStarCount];
 
 int totalDays  = 365;
 
 // -------------------- setDay ------------------- //
-// @brief: set day of year RGB color
-// @param: day of year or physical LED number, red[0-255], green[0-255], blue[0-255]
-// @return: void, set led strip
 void setDay(int Day, int R, int G, int B)
 {
-  Strip1.setPixelColor(Day-1, R,G,B);
+  leds[Day-1] = CRGB(R, G, B);
+  // Strip1.setPixelColor(Day-1, R,G,B);
 }
 
 
@@ -52,12 +54,8 @@ void setFinalLED()
 
 void setupDotStar()
 { 
-  Strip1.begin(); 
-  // Strip1.setSpeed(2000);
-  
-  Strip1.clear();
-  Strip1.show();
-  Serial.println("setupDotStar");
+  FastLED.addLeds<DOTSTAR, dotStarDataPin, dotStarClockPin, BGR>(leds, dotStarCount);
+  Serial.println("setupFastLED");
 }
 
 #endif

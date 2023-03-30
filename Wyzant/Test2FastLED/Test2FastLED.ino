@@ -33,17 +33,24 @@ void setup()
   // setDay(solinoxs[2], fallColors[0], fallColors[1], fallColors[2]);
   // setDay(solinoxs[3], winterColors[0], winterColors[1], winterColors[2]);
 
-  Strip1.show();
+  // Strip1.show();
+  FastLED.show();
 }
 
 
 void loop() 
 {
   Serial.println(millis());
-  Strip1.setPixelColor(1,0,0,100);
-  Strip1.show();
+  setDay(1, 10, 0, 0);
+  
+  FastLED.show();
+  // Strip1.setPixelColor(1,0,0,100);
+  // Strip1.show();
   delay(100);
-  Strip1.setPixelColor(1,0,0,0);
-  Strip1.show();
+  
+  setDay(1, 0, 0, 0);
+  FastLED.show();
+  //Strip1.setPixelColor(1,0,0,0);
+  //Strip1.show();
   delay(100);  
 }
