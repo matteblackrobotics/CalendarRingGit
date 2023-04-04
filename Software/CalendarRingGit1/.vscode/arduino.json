@@ -1,7 +1,0 @@
-{
-    "port": "/dev/tty.usbserial-1420",
-    "configuration": "cpu=atmega328",
-    "board": "arduino:avr:nano",
-    "programmer": "avrisp",
-    "sketch": "CalendarRing.5.ino"
-}
