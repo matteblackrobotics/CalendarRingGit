@@ -12,7 +12,7 @@ int todayColors[] = {0, 100, 0}; //green = today
 
 
 // --------------------- checkNewDay --------------------- //
-// when the the day of year changes, flag
+// when the day of year changes, flag to rebuild ring
 bool checkNewDay()
 {
   if(dayLast =! Day) 

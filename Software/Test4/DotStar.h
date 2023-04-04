@@ -3,17 +3,17 @@
 
 // Handles dotStar and/or neoPixel
 
+#include <Arduino.h>
 #include "xPrint.h"
 
+// ------------------ dotStar ------------------- //
 // Adafruit DotStar: https://learn.adafruit.com/adafruit-dotstar-leds/overview
 // Library: https://github.com/adafruit/Adafruit_DotStar
-// 
 // SPI Communication
 // 5v to 5v power supply
 // GND to GND power supply (to MOSFET source) out drain to GND
 // DI (data input green) to D11 (SPI MOSI pin ardiuno nano)
 // CI (clock input yellow) to D13 (SPI SCK pin arduino nano)
-#include <Arduino.h>
 #include <Adafruit_DotStar.h>
 #include <SPI.h>       
 const int dotStarCount = 432;
@@ -21,10 +21,13 @@ const int dotStarCount = 432;
 #define dotStarClockPin   13
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
 
+
+// ------------------ neoPixel ------------------- //
 #include <Adafruit_NeoPixel.h>
 #define neoPin 2
 #define neoCount 300
 Adafruit_NeoPixel neo(neoCount, neoPin, NEO_GRB + NEO_KHZ800);
+
 
 int totalDays  = 365;
 
@@ -61,6 +64,7 @@ void setFinalLED()
 }
 
 
+// -------------------- setupDotStar ------------------- //
 void setupDotStar()
 { 
   Strip1.begin(); 
@@ -69,6 +73,8 @@ void setupDotStar()
   //Serial.println("setupDotStar");
 }
 
+
+// -------------------- setupNeoPixel ------------------- //
 void setupNeo()
 { 
   neo.begin(); 

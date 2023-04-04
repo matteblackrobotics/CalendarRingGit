@@ -50,6 +50,7 @@ void checkDaylightSavings()
 }
 
 
+// --------------------- setRTC ------------------- //
 // adjust date and time, upload, comment out, upload again:
 void setRTC(int year, int month, int day, int hour, int min, int second)
 {
@@ -58,6 +59,7 @@ void setRTC(int year, int month, int day, int hour, int min, int second)
 }
 
 
+// --------------------- readRTC ------------------- //
 void readRTC()
 {
   DateTime now = rtc.now();
@@ -71,6 +73,8 @@ void readRTC()
   Second = now.second(); 
 }
 
+
+// --------------------- printRTC ------------------- //
 /*
 void printRTC()
 {
@@ -89,6 +93,8 @@ void printRTC()
 
 */
 
+// --------------------- processRTC ------------------- //
+// called by main
 void processRTC()
 {
   setupRTC();

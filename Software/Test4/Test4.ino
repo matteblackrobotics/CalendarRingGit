@@ -19,7 +19,6 @@
 void setup() 
 {
   setupSerial();
-  testPrint(); // if the string is too long, it fails....
   setupDotStar();
   setupNeo();
   processFirstDays();

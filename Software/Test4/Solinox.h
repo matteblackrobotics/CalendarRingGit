@@ -2,14 +2,13 @@
 #define Solinox_h
 
 // Solstices and Equinoxs
+// Layer 2
 
 #include <Arduino.h>
 #include "DotStar.h"
 #include "xPrint.h"
-extern Adafruit_DotStar Strip1;
 
 
-// Layer 2
 const int solinoxMax = 4;
 const int solinoxs[solinoxMax] = {79, 172, 266, 355};  // March 20, June 21st, Sept 23, Dec 21 
 int solinoxColors[] = {80, 10, 50};
@@ -19,7 +18,8 @@ int summerColors[] = {50, 10, 0}; // red
 int fallColors[] = {50, 25, 0};   // orange brown
 int winterColors[] = {50, 50, 50}; // light blue
 
-// ------------------ setSolionxs() --------------- //
+
+// ------------------ setSolionxs1() --------------- //
 // all same colors
 void setSolinoxs1()
 {
@@ -32,9 +32,10 @@ void setSolinoxs1()
     //Serial.println("solinoxs1: all same colors");
     //Serial.println();
   }
-
 }
 
+
+// ------------------ setSolionxs2() --------------- //
 // individual colors
 void setSolinoxs2()
 {

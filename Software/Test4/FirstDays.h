@@ -2,13 +2,12 @@
 #define FirstDays_h
 
 // First days of every month highlighted
+// Layer 1
 
 #include <Arduino.h>
 #include "DotStar.h"
 #include "xPrint.h"
 
-extern Adafruit_DotStar Strip1;
-// Layer 1
 
 // ------------------------ first days -------------------- //
 // day of year of first days of each month
@@ -29,12 +28,6 @@ void calculateFirstDays()
   }
 }
 
-
-void testPrint()
-{
-  //Serial.println(F("jsadfasdfasdfasdfasdfasdfsadf sd fdsa dfsa faf sdfs"));
-  // removes from global variabales moves to storage space
-}
 
 // ---------------------- printFirstDays() ---------------------- //
 void printFirstDays()
@@ -78,6 +71,7 @@ void setFirstDays()
 
 
 // ---------------------- processFirstDays() ---------------------- //
+// called by main
 void processFirstDays()
 {
   calculateFirstDays();
