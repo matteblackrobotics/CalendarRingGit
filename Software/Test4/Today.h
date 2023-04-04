@@ -10,6 +10,8 @@ bool dayNew;  // is it a new day
 int dayLast;
 int todayColors[] = {0, 100, 0}; //green = today
 
+int pulseCount = 0;
+
 
 // --------------------- checkNewDay --------------------- //
 // when the day of year changes, flag to rebuild ring

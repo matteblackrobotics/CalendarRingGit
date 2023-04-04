@@ -15,6 +15,8 @@
 #include "Today.h"
 #include "xPrint.h"
 
+
+
 void setup() 
 {
   setupSerial();
@@ -33,6 +35,7 @@ void setup()
   rtc.begin();
   setupRTC(); 
   readRTC();
+  printRTC();
   setToday();
 
 
@@ -50,6 +53,19 @@ void loop()
     Serial.println("debug outputs....");
     Serial.println(millis());
   } 
+
+  // pulse today
+  while(true)
+  {
+    if(pulseCount < todayColors[1])
+    {
+      setDay(dayOfYear, 0, pulseCount, 0);
+      neo.show();
+      delay(20);
+      pulseCount++;
+    }
+    else(pulseCount = 0); 
+  }
   
   // blink LEDs
   setDay(2,0,0,100);

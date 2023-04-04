@@ -30,6 +30,22 @@ Adafruit_NeoPixel neo(neoCount, neoPin, NEO_GRB + NEO_KHZ800);
 
 
 int totalDays  = 365;
+//int ringShift = -354; // set winter solstice at top
+int ringShift = 10;
+
+
+// -------------------- shiftIndex ------------------- //
+// @brief: shifts led index around ring
+// @param: index: [0:indexMax], indexMax: Max size if index vector, shift: index shift
+// @return: new index after shift with wrap around
+int shiftIndex(int index, int indexMax, int shift)
+{
+  int indexNew;
+  indexNew = index + shift;
+  if (indexNew < 0) {indexNew = indexMax + indexNew + 1;}
+  if (indexNew > indexMax) {indexNew = indexNew - indexMax - 1;}
+  return indexNew;
+}
 
 
 // -------------------- setDay ------------------- //
@@ -38,8 +54,19 @@ int totalDays  = 365;
 // @return: void, set led strip
 void setDay(int Day, int R, int G, int B)
 {
+  int newIndex = shiftIndex(Day, neoCount, ringShift);
   Strip1.setPixelColor(Day-1, R,G,B);
   neo.setPixelColor(Day-1, R,G,B);
+}
+
+
+// -------------------- setDay w/ index shift ------------------- //
+// needs work
+void setDay1(int Day, int R, int G, int B)
+{
+  int newIndex = shiftIndex(Day-1, neoCount-1, ringShift);
+  Strip1.setPixelColor(newIndex, R,G,B);
+  neo.setPixelColor(newIndex, R,G,B);
 }
 
 

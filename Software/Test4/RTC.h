@@ -24,13 +24,7 @@ int Minute;
 int Second;
 int dayOfYear;
 
-// --------------------- RTC --------------------- //
-void setupRTC()
-{
-  rtc.begin();
-  delay(500);
-  // setRTC(2022, 7, 31, 19, 6, 0);
-}
+
 
 
 // --------------------- Daylight Savings ---------------- //
@@ -55,7 +49,7 @@ void checkDaylightSavings()
 void setRTC(int year, int month, int day, int hour, int min, int second)
 {
   rtc.adjust(DateTime(year, month, day, hour, min, second)); 
-  //Serial.println(" RTC Set ");
+  Serial.println("RTC Set");
 }
 
 
@@ -75,11 +69,10 @@ void readRTC()
 
 
 // --------------------- printRTC ------------------- //
-/*
 void printRTC()
 {
-  //printInt("daylightSavings", daylightSavings); printLn();
-  //printString("RTC:");
+  Serial.print("daylightSavings: "); Serial.println(daylightSavings);
+  Serial.print("RTC: ");
   Serial.print(Year); Serial.print('/');
   Serial.print(Month); Serial.print('/');
   Serial.print(Day); Serial.print(" (");
@@ -88,10 +81,18 @@ void printRTC()
   Serial.print(Minute); Serial.print(":");
   Serial.print(Second);
   Serial.println();
-  //printLn();
+  Serial.println();
 }
 
-*/
+
+// --------------------- RTC --------------------- //
+void setupRTC()
+{
+  rtc.begin();
+  delay(500);
+  // setRTC(2023, 4, 4, 7, 33, 0); year, month, day, hour-24, min, second
+}
+
 
 // --------------------- processRTC ------------------- //
 // called by main
@@ -99,7 +100,7 @@ void processRTC()
 {
   setupRTC();
   readRTC();
-  // printRTC();
+  printRTC();
 }
 
 #endif
