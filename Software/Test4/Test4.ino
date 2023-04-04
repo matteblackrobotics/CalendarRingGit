@@ -13,8 +13,7 @@
 #include "Solinox.h"
 #include "RTC.h"
 #include "Today.h"
-#include "xPrint.h" 
-#include "test.h"
+#include "xPrint.h"
 
 void setup() 
 {
@@ -37,8 +36,9 @@ void setup()
   setToday();
 
 
+  // show strips
   Strip1.show();
-  neo.setPixelColor(neoCount-1, 0,0,100);
+  neo.setPixelColor(neoCount-1, 0,0,100); // show final LED
   neo.show();
 }
 
@@ -50,6 +50,8 @@ void loop()
     Serial.println("debug outputs....");
     Serial.println(millis());
   } 
+  
+  // blink LEDs
   setDay(2,0,0,100);
   Strip1.show();
   neo.show();

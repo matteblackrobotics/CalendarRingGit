@@ -19,5 +19,4 @@ void setupSerial()
   Serial.flush();
 }
 
-
 #endif
