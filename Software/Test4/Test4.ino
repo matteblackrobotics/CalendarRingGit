@@ -1,11 +1,9 @@
 // CalendarRing
-// Shows 1st days of every month, solstaces and equinoxs, eventually an RTC will show current day
-
-// Notes:
-// author and filename serial out fails
+// Shows 1st days of every month, solstaces and equinoxs, read RTC and show current day
+// Range finder senses if you are near and brightens ring
 
 // Questions:
-// How does dotStar and serial.print interact
+// How does dotStar and serial.print interact?
 // How do .h files interact?
 
 
