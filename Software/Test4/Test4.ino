@@ -27,11 +27,7 @@ void setup()
   processFirstDays();
   setFinalDay();
   setFinalLED();
-  
-
-  // 1. dotStar does not update, clears only when depowered, but serial does print out
   setSolinoxs1();
-  // printSolinoxs(); // printing solinoxs dotStar fails strip
 
   //---------- RTC ----------//
   rtc.begin();
@@ -55,7 +51,8 @@ void loop()
   } 
 
   
-  //---------- mapRange to Brightness ----------//
+  //---------- range to brightness ----------//
+  // if in range of sonar, brighten ring
   if(1)
   {
     range = readSonar();
@@ -87,6 +84,7 @@ void loop()
 
   
   //---------- shift brightness ----------//
+  // test setBrightness() function
   if(0)
   {
     if(brightness < brightnessMax)
@@ -104,6 +102,7 @@ void loop()
   }
   
   //---------- blink LED ----------//
+  // verify code is running
   if(0)
   {
     setDay(2,0,0,100);
