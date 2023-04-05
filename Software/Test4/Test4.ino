@@ -19,6 +19,7 @@
 
 void setup() 
 {
+  // -------- setups -------- //
   setupSerial();
   setupDotStar();
   setupNeo();
@@ -43,6 +44,7 @@ void setup()
 
 void loop() 
 {
+  //---------- if debug ----------//
   if(debugState == 1) 
   {
     Serial.println("debug outputs....");
@@ -69,7 +71,7 @@ void loop()
 
 
   //---------- pulse Today LED ----------//
-  if(true)
+  if(1)
   {
     if(pulseCount < todayColors[1])
     {
@@ -99,6 +101,7 @@ void loop()
     }
     else{brightness = 1;}
   }
+
   
   //---------- blink LED ----------//
   // verify code is running
