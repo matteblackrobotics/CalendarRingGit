@@ -1,7 +1,7 @@
 #ifndef Solinox_h
 #define Solinox_h
 
-// Solstices and Equinoxs
+// Solstices and Equinoxes
 // Layer 2
 
 #include <Arduino.h>

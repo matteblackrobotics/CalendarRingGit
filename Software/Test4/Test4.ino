@@ -1,6 +1,6 @@
 // CalendarRing
 // 365 LED ring on wall as visual indicator of progression through the year
-// Shows 1st days of every month, solstaces and equinoxs, read RTC and show current day
+// Shows 1st days of every month, solstices and equinoxes, read RTC and show current day
 // Range finder senses if you are near and brightens ring
 
 // Questions:
