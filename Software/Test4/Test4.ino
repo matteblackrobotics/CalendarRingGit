@@ -8,13 +8,14 @@
 // How does dotStar and serial.print interact
 // How do .h files interact?
 
+
 #include "DotStar.h"
 #include "FirstDays.h"
 #include "Solinox.h"
 #include "RTC.h"
 #include "Today.h"
+#include "Sonar.h"
 #include "xPrint.h"
-
 
 
 void setup() 
@@ -22,6 +23,7 @@ void setup()
   setupSerial();
   setupDotStar();
   setupNeo();
+  setupSonar();
   processFirstDays();
   setFinalDay();
   setFinalLED();
@@ -29,20 +31,18 @@ void setup()
 
   // 1. dotStar does not update, clears only when depowered, but serial does print out
   setSolinoxs1();
-  // printSolinoxs(); // printing solinoxs fails strip
+  // printSolinoxs(); // printing solinoxs dotStar fails strip
 
-  // ---------- RTC ----------//
+  //---------- RTC ----------//
   rtc.begin();
   setupRTC(); 
   readRTC();
   printRTC();
   setToday();
 
-
-  // show strips
-  Strip1.show();
-  neo.setPixelColor(neoCount-1, 0,0,100); // show final LED
-  neo.show();
+  //---------- showStrips ----------//
+  neo.setPixelColor(neoCount-1, 100, 0, 0); // show final LED
+  showStrips();
 }
 
 
@@ -54,26 +54,63 @@ void loop()
     Serial.println(millis());
   } 
 
-  // pulse today
-  while(true)
+  
+  //---------- mapRange to Brightness ----------//
+  if(1)
+  {
+    range = readSonar();
+    printSonar();
+    brightness = map(range, 130, 5, 10, 200);
+    if(brightness < 0) {brightness = 0;}
+    neo.setBrightness(brightness);
+    Strip1.setBrightness(brightness);
+    setFirstDays();
+    setSolinoxs1();
+    setToday();
+    //Serial.print("brightness: "); Serial.println(brightness);
+    showStrips();
+  }
+
+
+  //---------- pulse Today LED ----------//
+  if(true)
   {
     if(pulseCount < todayColors[1])
     {
       setDay(dayOfYear, 0, pulseCount, 0);
       neo.show();
-      delay(20);
+      delay(1);
       pulseCount++;
     }
-    else(pulseCount = 0); 
+    else{pulseCount = 0;}
+  }
+
+  
+  //---------- shift brightness ----------//
+  if(0)
+  {
+    if(brightness < brightnessMax)
+    {
+      neo.setBrightness(brightness);
+      Strip1.setBrightness(brightness);
+      setFirstDays();
+      setSolinoxs1();
+      setToday();
+      //Serial.println(brightness);
+      showStrips();
+      brightness++;
+    }
+    else{brightness = 1;}
   }
   
-  // blink LEDs
-  setDay(2,0,0,100);
-  Strip1.show();
-  neo.show();
-  delay(100);
-  setDay(2,0,0,0);
-  Strip1.show();
-  neo.show();
-  delay(100);  
+  //---------- blink LED ----------//
+  if(0)
+  {
+    setDay(2,0,0,100);
+    showStrips();
+    delay(1);
+    setDay(2,0,0,0);
+    showStrips();
+    delay(1);  
+  }
 }

@@ -109,4 +109,10 @@ void setupNeo()
   neo.show();
 }
 
+void showStrips()
+{
+  Strip1.show();
+  neo.show();
+}
+
 #endif

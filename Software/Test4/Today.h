@@ -31,9 +31,9 @@ void setToday()
 {
   dayOfYear = firstDays[Month-1] + Day-1;
   setDay(dayOfYear, todayColors[0], todayColors[1], todayColors[2]);
-  Serial.print("dayOfYear: "); Serial.print(dayOfYear); Serial.println(" ");
-  Serial.print("today: set green");
-  Serial.println();
+  //Serial.print("dayOfYear: "); Serial.print(dayOfYear); Serial.println(" ");
+  //Serial.print("today: set green");
+  //Serial.println();
 }
 
 #endif
