@@ -22,7 +22,7 @@ const int dotStarCount = 432;
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
 
 
-// ------------------ neoPixel ------------------- //
+// ------------------ neoPixel test to verify code logic work ------------------- //
 #include <Adafruit_NeoPixel.h>
 #define neoPin 2
 #define neoCount 300
