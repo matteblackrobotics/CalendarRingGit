@@ -23,11 +23,12 @@ void setup()
   setupSerial();
   setupDotStar();
   setupNeo();
-  setupSonar();
+  // setupSonar();
   processFirstDays();
   setFinalDay();
   setFinalLED();
   setSolinoxs1();
+  printSolinoxColors();
 
   //---------- RTC ----------//
   rtc.begin();
@@ -39,12 +40,13 @@ void setup()
   //---------- showStrips ----------//
   neo.setPixelColor(neoCount-1, 100, 0, 0); // show final LED
   showStrips();
-  checkMemory();
+  Serial.println("hello");
 }
 
 
 void loop() 
 {
+  //Serial.println("loop"); delay(100);
   //---------- if debug ----------//
   if(debugState == 1) 
   {
@@ -59,13 +61,14 @@ void loop()
   {
     range = readSonar();
     printSonar();
-    brightness = map(range, 130, 5, 10, 200);
+    brightness = map(range, 200, 5, 10, 200);
     if(brightness < 0) {brightness = 0;}
     neo.setBrightness(brightness);
     Strip1.setBrightness(brightness);
     setFirstDays();
     setSolinoxs1();
     setToday();
+    Serial.print("range: "); Serial.println(range);
     Serial.print("brightness: "); Serial.println(brightness);
     showStrips();
   }
@@ -115,5 +118,4 @@ void loop()
     showStrips();
     delay(1);  
   }
-  checkMemory();
 }

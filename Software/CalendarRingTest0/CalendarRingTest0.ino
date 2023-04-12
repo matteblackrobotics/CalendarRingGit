@@ -18,15 +18,14 @@ void setup()
 
   // --------- dotStar -------- //
   setupDotStar();
-  setFirstDay();
   setFinalDay();
   setFinalLED();
   //stripTest();
   
   // ---------- firstDays -------- //
   calculateFirstDays();
-  //printFirstDays();
-  //printFirstDayColors();
+  printFirstDays();
+  printFirstDayColors();
   setFirstDays();
   Serial.println();
 
@@ -34,14 +33,14 @@ void setup()
 
   Serial.println(getPSTR("Old way to force String to Flash"));
   Serial.println(F("New way to force String to Flash"));
-  Serial.println(F("Free RAM = "));
+  Serial.print(F("Free RAM (bytes) = "));
   Serial.println(freeMemory());
 }
 
 // ---------------------- loop -------------------- //
 void loop() 
 {
-  //Serial.print("millis(): ");
-  //Serial.println(millis());
+  Serial.print("millis(): ");
+  Serial.println(millis());
   delay(1000);
 }

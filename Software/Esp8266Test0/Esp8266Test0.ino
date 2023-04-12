@@ -1,6 +1,3 @@
-#include <MemoryFree.h>
-#include <pgmStrToRAM.h>
-
 // Notes:
 // Serial printing fails dotStar
 // Only limited use serial.print() allows the dotStar to update
@@ -21,21 +18,15 @@ void setup()
   setFirstDay();
   setFinalDay();
   setFinalLED();
-  //stripTest();
   
   // ---------- firstDays -------- //
   calculateFirstDays();
-  //printFirstDays();
-  //printFirstDayColors();
+  printFirstDays();
+  printFirstDayColors();
   setFirstDays();
   Serial.println();
 
   showStrip1();
-
-  Serial.println(getPSTR("Old way to force String to Flash"));
-  Serial.println(F("New way to force String to Flash"));
-  Serial.println(F("Free RAM = "));
-  Serial.println(freeMemory());
 }
 
 // ---------------------- loop -------------------- //

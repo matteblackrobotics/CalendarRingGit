@@ -23,28 +23,30 @@ void setup()
   setupSerial();
   setupDotStar();
   setupNeo();
-  setupSonar();
+  // setupSonar();
   processFirstDays();
   setFinalDay();
   setFinalLED();
   setSolinoxs1();
+  printSolinoxColors();
 
   //---------- RTC ----------//
-  rtc.begin();
-  setupRTC(); 
-  readRTC();
-  printRTC();
-  setToday();
+  //rtc.begin();
+  //setupRTC(); 
+  //readRTC();
+  //printRTC();
+  //setToday();
 
   //---------- showStrips ----------//
   neo.setPixelColor(neoCount-1, 100, 0, 0); // show final LED
   showStrips();
-  checkMemory();
+  Serial.println("hello");
 }
 
 
 void loop() 
 {
+  Serial.println("loop"); delay(100);
   //---------- if debug ----------//
   if(debugState == 1) 
   {
@@ -55,7 +57,7 @@ void loop()
   
   //---------- range to brightness ----------//
   // if in range of sonar, brighten ring
-  if(1)
+  if(0)
   {
     range = readSonar();
     printSonar();
@@ -72,7 +74,7 @@ void loop()
 
 
   //---------- pulse Today LED ----------//
-  if(1)
+  if(0)
   {
     if(pulseCount < todayColors[1])
     {
@@ -115,5 +117,4 @@ void loop()
     showStrips();
     delay(1);  
   }
-  checkMemory();
 }

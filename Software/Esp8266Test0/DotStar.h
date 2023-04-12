@@ -11,8 +11,8 @@
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
 const int dotStarCount = 432;
-#define dotStarDataPin 11  // green MOSI = SDD1 Esp8266
-#define dotStarClockPin 13  // yellow SDCLK = CLK Esp8266
+#define dotStarDataPin 4  // green MOSI  GPIO Pins Esp8266
+#define dotStarClockPin 5  // yellow CLK GPIO Pins Esp8266
 
 const int totalDays = 365;
 

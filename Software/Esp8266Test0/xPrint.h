@@ -4,6 +4,7 @@
 #define xPrint_h
 #include <Arduino.h>
 
+
 // buad rates
 const int baud1 = 9600;
 const int baud2 = 19200;
@@ -22,6 +23,10 @@ void setupSerial()
   Serial.println(fileName);
   Serial.println(author);
   Serial.println();
+}
+
+void checkMemory()
+{
 }
 
 #endif

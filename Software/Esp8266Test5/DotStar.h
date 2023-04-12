@@ -14,19 +14,22 @@
 // GND to GND power supply (to MOSFET source) out drain to GND
 // DI (data input green) to D11 (SPI MOSI pin ardiuno nano)
 // CI (clock input yellow) to D13 (SPI SCK pin arduino nano)
+
+
+
 #include <Adafruit_DotStar.h>
 #include <SPI.h>       
-const int dotStarCount = 150;
-#define dotStarDataPin    11
-#define dotStarClockPin   13
+const int dotStarCount = 432;
+#define dotStarDataPin 12  // DI = Silk D6 Esp8266 green
+#define dotStarClockPin 14 // CL = Silk D5 Esp8266 yellow
 Adafruit_DotStar Strip1(dotStarCount, dotStarDataPin, dotStarClockPin, DOTSTAR_BGR);
 
 
 // ------------------ neoPixel test to verify code logic work ------------------- //
 #include <Adafruit_NeoPixel.h>
-#define neoPin 2
+#define neoPin 0 // GPI0  = Slik D3
 //#define neoCount 300
-#define neoCount 150
+#define neoCount 300
 Adafruit_NeoPixel neo(neoCount, neoPin, NEO_GRB + NEO_KHZ800);
 
 

@@ -10,7 +10,7 @@
 
 #include <Adafruit_DotStar.h>
 #include <SPI.h>         
-const int dotStarCount = 432;
+const int dotStarCount = 100;
 #define dotStarDataPin 11
 #define dotStarClockPin 13
 
@@ -40,7 +40,7 @@ void setDay(int Day, int R, int G, int B)
 void setFirstDay()
 {
   setDay(1, 100, 100, 0);
-  //Serial.println("firstDay set");
+  Serial.println("firstDay set");
 }
 
 
@@ -48,7 +48,7 @@ void setFirstDay()
 void setFinalDay()
 {
   setDay(totalDays, 100, 0, 0);
-  //Serial.println("finalDay set");
+  Serial.println("finalDay set");
 }
 
 
@@ -56,7 +56,7 @@ void setFinalDay()
 void setFinalLED()
 {
   setDay(dotStarCount, 100, 0, 0);
-  // Serial.println("finalLED set");
+  Serial.println("finalLED set");
 }
 
 
