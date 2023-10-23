@@ -6,7 +6,6 @@
 
 #include <Arduino.h>
 #include "DotStar.h"
-#include "xPrint.h"
 
 
 // ------------------------ first days -------------------- //
@@ -56,6 +55,9 @@ void printFirstDayColors()
   Serial.println(" - Light Blue");
 }
 
+void setJan1(){
+  setDay(1, 40, 100, 0);
+}
 
 // ------------------ setFirstDays() --------------- //
 void setFirstDays()
@@ -65,6 +67,7 @@ void setFirstDays()
     // from the first days array 1 to 12, set RGB
     // minus 1 for indexing
     setDay(firstDays[Month], firstDayColors[0], firstDayColors[1], firstDayColors[2]);
+    setJan1();
   }  
   // Serial.println("firstDays: set");
 }
@@ -75,9 +78,12 @@ void setFirstDays()
 void processFirstDays()
 {
   calculateFirstDays();
-  //printFirstDays();
-  //printFirstDayColors();
+  printFirstDays();
+  printFirstDayColors();
   setFirstDays();
 }
 
+
+// ---------------------- blinkFirstDays ------------------------ //
+// runs through each first day and blinks the assosiated month number
 #endif
