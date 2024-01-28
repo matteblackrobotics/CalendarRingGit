@@ -16,7 +16,7 @@ int systemStateLast;
 bool systemStateChange = 0;
 bool connected = 1; // eventually will go in comms.h
 Timer systemStateTimer(200);
-bool debugState = 1;
+bool debugState = 0;
 
 // @brief: Check the state of the system based off range finder and connectivity
 // @param: range, from Sonar.h, from comms

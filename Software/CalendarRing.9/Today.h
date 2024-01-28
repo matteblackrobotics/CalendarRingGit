@@ -12,9 +12,10 @@ int dayLast;
 int todayColors[] = {0, 100, 0}; //green = today
 
 // Colors already set on the strip
-int todayBaseRed;
-int todayBaseGreen;
-int todayBaseBlue;
+uint8_t todayBaseRed;
+uint8_t todayBaseGreen;
+uint8_t todayBaseBlue;
+uint32_t todayBaseRGB;
 
 int pulseCount = 0;
 Timer todayPulse(20); // timer when to iterate the pulse
@@ -71,9 +72,11 @@ int pulseTodayBrightness(int index){
 
 // Check what the base colors of Today is already set on the ring
 void checkTodayBaseColors(){
-  todayBaseRed = Strip1.getRed(dayOfYear-1);
-  todayBaseGreen = Strip1.getGreen(dayOfYear-1);
-  todayBaseBlue = Strip1.getBlue(dayOfYear-1);
+  todayBaseRGB = Strip1.getPixelColor(dayOfYear-1);
+  todayBaseRed = (todayBaseRGB >> 16) & 0xFF; // Returns the Red component of a 32-bit color
+  todayBaseGreen = (todayBaseRGB >> 8) & 0xFF; // Returns the Green component of a 32-bit color
+  todayBaseBlue = todayBaseRGB & 0xFF;  // Returns the Blue component of a 32-bit color
+
 
   if(1){
     Serial.println();

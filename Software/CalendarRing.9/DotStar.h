@@ -21,11 +21,11 @@
 
 
 // ----------------- DotStar ----------------- //
-#include <Adafruit_DotStar_MBR.h>
+#include <Adafruit_DotStar.h>
 #include <SPI.h> 
 
 const int totalDays = 365;
-int ringShift = 0;
+int ringShift = 181;
 //int ringShift = 183; // shift ring half way around
 // int ringShift = -10;
 
